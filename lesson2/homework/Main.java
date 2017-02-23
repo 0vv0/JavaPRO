@@ -7,7 +7,7 @@ import java.util.StringJoiner;
  * Created by Oleksii.Sergiienko on 2/23/2017.
  */
 public class Main {
-    private final int LENGTH=16;
+    private static final int LENGTH=16;
     private int[][] ints;
     private static Random random = new Random();
     public static void main(String[] args) {

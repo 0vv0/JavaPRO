@@ -1,4 +1,4 @@
-package lesson2.homework;
+package lesson2.Bohdan;
 
 import java.util.Random;
 import java.util.StringJoiner;

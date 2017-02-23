@@ -1,4 +1,4 @@
-package lesson2.xmlparser;
+package lesson2.classwork.xmlparser;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -13,7 +13,7 @@ public class MyClass {
 
 	public static void main(String[] args) {
 		try {
-			File xmlFile = new File("src\\lesson2\\xmlparser\\1.xml");
+			File xmlFile = new File("src\\lesson2\\classwork\\xmlparser\\1.xml");
 
 			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();

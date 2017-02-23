@@ -36,17 +36,21 @@ public class Main {
 
     public int[][] build(){
         for (int i = 0; i <ints.length ; i++) {
-            for (int j = 0; j <ints[i].length ; j++) {
-                int number = ints[i][j];
-                for (int k = j+1; k <ints[i].length ; k++) {
-                    if(number==ints[i][k]){
-                        ints[i][k]+=3;
-                        k=j+1;
-                    }
+            ints[i] = fixLine(ints[i]);
+        }
+        return ints;
+    }
+
+    private int[] fixLine(int[] arr){
+        for (int i = 0; i <arr.length ; i++) {
+            for (int j=0; j < i ; j++) {
+                if(arr[j]==arr[i]){
+                    arr[i]+=3;
+                    i=-1;j=-1;
                 }
             }
         }
-        return ints;
+        return arr;
     }
 
     @Override

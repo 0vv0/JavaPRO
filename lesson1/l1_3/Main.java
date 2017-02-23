@@ -15,7 +15,7 @@ public class Main {
 
         myClass.set(0,0,0,"",false);
         String s = Serializer.serialize(myClass);
-        System.out.println("serialized: " + myClass);
+        System.out.println("serializing this: " + myClass);
 //        System.out.println("serialized string: " + s);
 
         myClass = Serializer.deserialize(s, myClass.getClass());

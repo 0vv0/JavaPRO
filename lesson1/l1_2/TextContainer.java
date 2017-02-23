@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  * Created by Oleksii.Sergiienko on 2/21/2017.
  */
-@SaveTo(path = "file.txt")
+@SaveTo(path = "src\\lesson1\\l1_2\\file.txt")
 public class TextContainer {
     String text = "my text here";
 

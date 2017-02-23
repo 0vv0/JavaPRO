@@ -10,9 +10,8 @@ import java.util.Map;
 /**
  * Created by Oleksii.Sergiienko on 2/21/2017.
  */
-public class Serializer {
+public final class Serializer {
     private static Map<Class, Class> converter = new HashMap();
-
     static {
         converter.put(byte.class, Byte.class);
         converter.put(char.class, Character.class);
@@ -44,7 +43,7 @@ public class Serializer {
         return result.toString();
     }
 
-    static <T> T deserialize(String objString, Class<T> tClass)
+    public static <T> T deserialize(String objString, Class<T> tClass)
             throws IllegalAccessException, InstantiationException, NoSuchFieldException,
             NoSuchMethodException, InvocationTargetException {
         T obj = tClass.newInstance();

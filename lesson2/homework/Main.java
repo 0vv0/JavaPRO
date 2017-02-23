@@ -43,10 +43,11 @@ public class Main {
 
     private int[] fixLine(int[] arr){
         for (int i = 0; i <arr.length ; i++) {
-            for (int j=0; j < i ; j++) {
+            for (int j=i+1; j < arr.length ; j++) {
                 if(arr[j]==arr[i]){
-                    arr[i]+=3;
+                    arr[j]+=3;
                     i=-1;j=-1;
+                    break;
                 }
             }
         }

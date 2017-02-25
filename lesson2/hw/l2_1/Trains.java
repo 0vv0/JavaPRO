@@ -1,4 +1,4 @@
-package lesson2.homework.l2_1;
+package lesson2.hw.l2_1;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
@@ -11,7 +11,7 @@ import java.util.StringJoiner;
 /**
  * Created by Oleksii.Sergiienko on 2/24/2017.
  */
-@XmlRootElement(name = "root")
+@XmlRootElement
 public class Trains implements Iterable<Train>{
     private List<Train> trains = new ArrayList<>();
 
@@ -19,7 +19,7 @@ public class Trains implements Iterable<Train>{
         return trains;
     }
 
-    @XmlElements(value = {@XmlElement(type = Train.class)})
+    @XmlElements(value = {@XmlElement(name = "train", type = Train.class)})
     public void setTrains(List<Train> trains) {
         this.trains = trains;
     }

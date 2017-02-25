@@ -1,4 +1,4 @@
-package lesson2.homework.l2_1;
+package lesson2.hw.l2_1;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -18,7 +18,7 @@ import java.time.LocalTime;
  */
 public class TrainsRunner {
     private Trains trains;
-    private static final String DIR = "src\\lesson2\\homework\\l2_1\\";
+    private static final String DIR = "src\\lesson2\\hw\\l2_1\\";
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, JAXBException {
         TrainsRunner trainsRunner = new TrainsRunner();

@@ -1,4 +1,4 @@
-package lesson2.homework.l2_1;
+package lesson2.hw.l2_1;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;

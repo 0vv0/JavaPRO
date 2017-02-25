@@ -1,9 +1,13 @@
 package lesson2.hw.l2_1;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
-import javax.xml.bind.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -33,7 +37,16 @@ public class TrainsRunner {
         System.out.println("0 trains" + trainsRunner.getTrains());
 
         trainsRunner.unmarshall();
-        System.out.println("3 trains" +trainsRunner.getTrains());
+        System.out.println("3 trains\n" +trainsRunner.getTrains());
+
+        System.out.println("\ntoday, from 15 till 19");
+        trainsRunner.getTrains().getTrains().stream()
+                .filter(x->
+                        x.getDate().equals(LocalDate.now())
+                        &&x.getDeparture().isAfter(LocalTime.of(15,00))
+                        &&x.getDeparture().isBefore(LocalTime.of(19,00))
+                ).forEach(x-> System.out.println(x));
+
 
     }
 
@@ -42,17 +55,17 @@ public class TrainsRunner {
     }
 
     public void add4trains(){
-        Train train1 = new Train("1", "Kyiv", "Odessa", "2017-02-24", "12:00");
+        Train train1 = new Train("1", "Kyiv", "Odessa", LocalDate.now(), LocalTime.of(15, 00));
 
         Train train2 = new Train();
         train2.setId("2");
         train2.setFrom("Odessa");
         train2.setTo("Kyiv");
-        train2.setDate(LocalDate.of(2017, 1, 25).toString());
-        train2.setDeparture(LocalTime.of(11, 10).toString());
+        train2.setDate(LocalDate.now());
+        train2.setDeparture(LocalTime.of(11, 10));
 
-        Train train3 = new Train("3", "Kyiv", "Zhmerinka", "2017-02-24", "12:00");
-        Train train4 = new Train("4", "Zhmerinka", "Kyiv", "2017-02-24", "12:20");
+        Train train3 = new Train("3", "Kyiv", "Zhmerinka", LocalDate.now(), LocalTime.of(16,00));
+        Train train4 = new Train("4", "Zhmerinka", "Kyiv", LocalDate.parse("2017-02-24"), LocalTime.of(17,20));
 
         trains = new Trains();
         trains.add(train1).add(train2);

@@ -2,7 +2,10 @@ package lesson2.hw.l2_1;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * Created by Oleksii.Sergiienko on 2/24/2017.
@@ -12,13 +15,13 @@ public class Train implements Serializable {
     private String id;
     private String from;
     private String to;
-    private String date;
-    private String departure;
+    private LocalDate date;
+    private LocalTime departure;
 
     public Train() {
     }
 
-    public Train(String id, String from, String to, String date, String departure) {
+    public Train(String id, String from, String to, LocalDate date, LocalTime departure) {
         this.id = id;
         this.from = from;
         this.to = to;
@@ -39,11 +42,13 @@ public class Train implements Serializable {
         this.to = to;
     }
 
-    public void setDate(String date) {
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public void setDeparture(String departure) {
+    @XmlJavaTypeAdapter(TimeAdapter.class)
+    public void setDeparture(LocalTime departure) {
         this.departure = departure;
     }
 
@@ -59,11 +64,11 @@ public class Train implements Serializable {
         return to;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public String getDeparture() {
+    public LocalTime getDeparture() {
         return departure;
     }
 

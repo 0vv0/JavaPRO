@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.StringJoiner;
+import java.util.function.Consumer;
 
 /**
  * Created by Oleksii.Sergiienko on 2/24/2017.
@@ -44,5 +45,10 @@ public class Trains implements Iterable<Train>{
     @Override
     public Iterator<Train> iterator() {
         return trains.iterator();
+    }
+
+    @Override
+    public void forEach(Consumer<? super Train> action) {
+        trains.forEach(action);
     }
 }
